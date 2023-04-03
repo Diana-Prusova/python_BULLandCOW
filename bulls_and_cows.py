@@ -130,10 +130,11 @@ def vyhodnoceni_typu_hrace(hadane_cislo: list):
     """
     pocet_pokusu = 0
     while True:
-        cow = []
-        bull = []
         cislo_hrace = ziskani_tipu_hrace()
         pocet_pokusu += 1
+        bulls = 0
+        cows = 0
+        print(hadane_cislo)
 
         # VYHODNOCENÍ OBSAHU
         if cislo_hrace == "exit":
@@ -142,27 +143,25 @@ def vyhodnoceni_typu_hrace(hadane_cislo: list):
             return pocet_pokusu
         else:
             for index, cislo in enumerate(cislo_hrace):
-                if cislo in hadane_cislo:
-                    cow.append("cow")
-                if hadane_cislo[index] == cislo_hrace[index]:
-                    bull.append("bull")
+                cislo = int(cislo)
+                if cislo == hadane_cislo[index]:
+                    bulls += 1
+                elif cislo in hadane_cislo:
+                    cows += 1
 
             # POČÍNÁNÍ "SKÓRE"
-            bulls = len(bull)
-            cows = len(cow)
-
             if bulls > 1:
-                vypis_bull = f"BULLS {bulls}x"
+                vypis_bulls = f"BULLS {bulls}x"
             else:
-                vypis_bull = f"BULL {bulls}x"
+                vypis_bulls = f"BULL {bulls}x"
 
             if cows > 1:
-                vypis_cow = f"COWS {cows}x"
+                vypis_cows = f"COWS {cows}x"
             else:
-                vypis_cow = f"COW {cows}x"
+                vypis_cows = f"COW {cows}x"
 
             # VÝPIS VÝSLEDKU
-            print(f"| {vypis_bull} | {vypis_cow} |")
+            print(f"| {vypis_bulls} | {vypis_cows} |")
 
 
 def prevod_casu(cas: float) -> str:

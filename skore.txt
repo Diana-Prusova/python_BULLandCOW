@@ -1,1 +1,1 @@
-{'nejlepší': {'jméno': 'MONIKA', 'čas': '00:04:14', 'pokusy': 12}, 'hráči': {'sum hráčů': 11, 'sum čas': 1253.650015115738, 'sum pokusů': 62}}
+{'nejlepší': {'jméno': 'MONIKA', 'čas': '00:04:14', 'pokusy': 12}, 'hráči': {'sum hráčů': 12, 'sum čas': 1425.5976476669312, 'sum pokusů': 82}}
